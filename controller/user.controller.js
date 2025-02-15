@@ -33,6 +33,7 @@ export const userSignup = asyncHandler(async (req, res) => {
   res.status(201).json({
     message: "User created successfully",
     token,
+    id: newUser._id,
   });
 });
 
@@ -64,6 +65,7 @@ export const userSignin = asyncHandler(async (req, res) => {
   res.status(200).json({
     message: "User signed in successfully",
     token,
+    id: user._id,
   });
 });
 
