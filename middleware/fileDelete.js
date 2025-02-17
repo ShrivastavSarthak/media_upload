@@ -1,12 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { asyncHandler } from "../utils/asyncHandler.js";
+import { MediaModel } from "../module/media.module.js";
 
 const deleteFile = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
 
-  // Get media details to find file path
-  const media = await req.app.locals.MediaModel.findById(id);
+  const media = await MediaModel.findById(id);
 
   if (!media) {
     return next();
