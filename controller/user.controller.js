@@ -106,8 +106,9 @@ export const getAllMedia = asyncHandler(async (req, res) => {
     .populate("userId", "-password");
 
   if (!media.length) {
-    return res.status(404).json({
-      message: "No media found for this user",
+    return res.status(200).json({
+      count: media.length,
+      media: [],
     });
   }
 
