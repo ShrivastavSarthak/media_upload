@@ -2,8 +2,6 @@ import { MediaModel } from "../module/media.module.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 export const postMedia = asyncHandler(async (req, res) => {
-  console.log(req.body);
-
   if (!req.file) {
     return res.status(400).json({
       message: "No file uploaded",
