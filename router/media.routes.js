@@ -14,7 +14,7 @@ const router = Router();
 
 router.route("/post").post(checkUser, upload.single("file"), postMedia);
 router.route("/:id").patch(checkUser, upload.single("file"), updateMedia);
-router.route("/:id").delete(checkUser, deleteFile.single("file"), deleteMedia);
+router.route("/:id").delete(checkUser, deleteFile, deleteMedia);
 router.route("/:id").get(checkUser, getMediaById);
 router.route("/user/:id").get(checkUser, getAllMedia);
 
