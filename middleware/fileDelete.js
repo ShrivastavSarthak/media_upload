@@ -12,14 +12,11 @@ const deleteFile = asyncHandler(async (req, res, next) => {
     return next();
   }
 
-  // Get full file path
   const filePath = path.join(process.cwd(), media.fileUrl);
 
-  // Delete file from uploads folder
   fs.unlink(filePath, (err) => {
     if (err) {
       console.error("Error deleting file:", err);
-      // Continue even if file deletion fails
     }
   });
 
